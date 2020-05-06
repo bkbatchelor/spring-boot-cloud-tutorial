@@ -24,4 +24,8 @@ public class Employee{
 
 	@JsonProperty("position")
 	private String position;
+
+	public Employee(String id) {
+		this.id = id;
+	}
 }
