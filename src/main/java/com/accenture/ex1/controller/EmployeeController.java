@@ -2,6 +2,7 @@ package com.accenture.ex1.controller;
 
 
 import com.accenture.ex1.model.Employee;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,20 +16,19 @@ public class EmployeeController {
     //Create employee
     @PostMapping("/employee")
     public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee){
-        return null;
+        return new ResponseEntity<>(employee, HttpStatus.ACCEPTED);
     }
 
     //Read employee
     @GetMapping("/employee/{id}")
     public ResponseEntity<Employee> getEmployees(@PathVariable(value = "id") String id){
-//        ResponseEntity.ok(Employee);
         return ResponseEntity.ok(new Employee(id));
     }
 
     //Update employee
-    @PutMapping("/record/{id}")
+    @PutMapping("/employee/{id}")
     public ResponseEntity<Employee> updateRecord(@PathVariable(value = "id") String id){
-        return ResponseEntity.ok(new Employee(id));
+        return new ResponseEntity<>(new Employee(id), HttpStatus.ACCEPTED);
     }
 
     //Delete employee
