@@ -9,8 +9,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Article{
-	private List<String> image;
+public class Article {
+	private String firstName;
 	private String subtitle;
 	private String postDate;
 	private String id;
