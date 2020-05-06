@@ -1,4 +1,4 @@
-package com.accenture.ex1;
+package com.accenture.ex1.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
