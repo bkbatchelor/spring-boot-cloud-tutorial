@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -21,18 +22,20 @@ public class EmployeeController {
     @GetMapping("/employee/{id}")
     public ResponseEntity<Employee> getEmployees(@PathVariable(value = "id") String id){
 //        ResponseEntity.ok(Employee);
-        return null;
+        return ResponseEntity.ok(new Employee(id));
     }
 
     //Update employee
     @PutMapping("/record/{id}")
     public ResponseEntity<Employee> updateRecord(@PathVariable(value = "id") String id){
-        return null;
+        return ResponseEntity.ok(new Employee(id));
     }
 
     //Delete employee
     @DeleteMapping("/employee/{id}")
-    public Map<String,String> deleteEmployee(@PathVariable(value = "id") String id){
-        return null;
+    public Map<String,String> deleteEmployee(@PathVariable(value = "id") String id) {
+        Map<String, String> map = new HashMap<>();
+        map.put("delete", "successful");
+        return map;
     }
 }
