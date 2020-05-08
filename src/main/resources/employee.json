@@ -1,6 +1,6 @@
 {
-  "id":"101",
-  "position":"developer",
+  "_id": "",
+  "position": "developer",
   "contact": {
     "firstName": "Brian",
     "middleName": "",
@@ -9,7 +9,7 @@
   "address": {
     "address": "",
     "city": "",
-    "state":"",
+    "state": "",
     "zipcode": ""
   },
   "phone": {

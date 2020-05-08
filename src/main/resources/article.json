@@ -1,8 +1,0 @@
-{
-  "id":"101",
-  "title":"Spring Boot for Devs",
-  "subtitle":"The easy way",
-  "body":"Spring Boot makes it easy to create stand-alone, production-grade Spring based Applications that you can \"just run\".",
-  "postDate":"05/06/2020",
-  "image": ["img1","img2"]
-}
