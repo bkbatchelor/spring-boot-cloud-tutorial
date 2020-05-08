@@ -1,8 +1,8 @@
-package com.accenture.spring.boot.cloud.training.controller;
+package com.insidethesandbox.spring.boot.cloud.controller;
 
 
-import com.accenture.spring.boot.cloud.training.model.employee.EmployeeModel;
-import com.accenture.spring.boot.cloud.training.repository.EmployeeRepository;
+import com.insidethesandbox.spring.boot.cloud.model.employee.EmployeeModel;
+import com.insidethesandbox.spring.boot.cloud.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -21,38 +21,38 @@ public class EmployeeController {
 
     //Create employee
     @PostMapping("/employee")
-    public EmployeeModel.EmployeeWrapper createEmployee(@Valid @RequestBody EmployeeModel employee) {
+    public EmployeeModel.Wrapper createEmployee(@Valid @RequestBody EmployeeModel employee) {
         Map<String, List<EmployeeModel>> responseListMap = new HashMap<>();
         responseListMap.put("created", Collections.singletonList(employeeRepository.save(employee)));
 
-        return new EmployeeModel.EmployeeWrapper(responseListMap);
+        return new EmployeeModel.Wrapper(responseListMap);
     }
 
     //Read all employees
     @GetMapping("/employees")
-    public EmployeeModel.EmployeeWrapper getEmployees() {
+    public EmployeeModel.Wrapper getEmployees() {
         Map<String, List<EmployeeModel>> responseListMap = new HashMap<>();
         responseListMap.put("query", employeeRepository.findAll());
 
-        return new EmployeeModel.EmployeeWrapper(responseListMap);
+        return new EmployeeModel.Wrapper(responseListMap);
     }
 
     //Read employee
     @GetMapping("/employee/{id}")
-    public EmployeeModel.EmployeeWrapper getEmployee(@PathVariable(value = "id") String id) {
+    public EmployeeModel.Wrapper getEmployee(@PathVariable(value = "id") String id) {
         Map<String, List<EmployeeModel>> responseListMap = new HashMap<>();
         responseListMap.put("query", Collections.singletonList(employeeRepository.findById(id).get()));
 
-        return new EmployeeModel.EmployeeWrapper(responseListMap);
+        return new EmployeeModel.Wrapper(responseListMap);
     }
 
     //Update employee
     @PutMapping("/employee")
-    public EmployeeModel.EmployeeWrapper updateRecord(@Valid @RequestBody EmployeeModel employee) {
+    public EmployeeModel.Wrapper updateRecord(@Valid @RequestBody EmployeeModel employee) {
         Map<String, List<EmployeeModel>> responseListMap = new HashMap<>();
         responseListMap.put("updated", Collections.singletonList(employeeRepository.save(employee)));
 
-        return new EmployeeModel.EmployeeWrapper(responseListMap);
+        return new EmployeeModel.Wrapper(responseListMap);
     }
 
     //Delete employee

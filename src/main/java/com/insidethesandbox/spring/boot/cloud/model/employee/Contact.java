@@ -1,4 +1,4 @@
-package com.accenture.spring.boot.cloud.training.model.employee;
+package com.insidethesandbox.spring.boot.cloud.model.employee;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.accenture.spring.boot.cloud.training;
+package com.insidethesandbox.spring.boot.cloud;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

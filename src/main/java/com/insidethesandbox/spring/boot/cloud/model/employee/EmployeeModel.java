@@ -1,4 +1,4 @@
-package com.accenture.spring.boot.cloud.training.model.employee;
+package com.insidethesandbox.spring.boot.cloud.model.employee;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -38,11 +38,11 @@ public class EmployeeModel {
     }
 
     @Getter
-    public static class EmployeeWrapper {
+    public static class Wrapper {
 
         private Map<String, List<EmployeeModel>> responseList;
 
-        public EmployeeWrapper(Map<String, List<EmployeeModel>> listMap) {
+        public Wrapper(Map<String, List<EmployeeModel>> listMap) {
             this.responseList = listMap;
         }
     }

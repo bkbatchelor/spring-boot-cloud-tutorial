@@ -1,8 +1,10 @@
-package com.accenture.spring.boot.cloud.training.service;
+package com.insidethesandbox.spring.boot.cloud.service;
 
-import com.accenture.spring.boot.cloud.training.repository.EmployeeRepository;
+import com.insidethesandbox.spring.boot.cloud.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EmployeeService {
 
     @Autowired

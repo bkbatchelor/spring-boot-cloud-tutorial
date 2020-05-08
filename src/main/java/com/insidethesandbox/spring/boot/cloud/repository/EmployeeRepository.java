@@ -1,6 +1,6 @@
-package com.accenture.spring.boot.cloud.training.repository;
+package com.insidethesandbox.spring.boot.cloud.repository;
 
-import com.accenture.spring.boot.cloud.training.model.employee.EmployeeModel;
+import com.insidethesandbox.spring.boot.cloud.model.employee.EmployeeModel;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

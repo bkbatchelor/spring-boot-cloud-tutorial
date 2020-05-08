@@ -1,4 +1,4 @@
-package com.accenture.spring.boot.cloud.training;
+package com.insidethesandbox.spring.boot.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
