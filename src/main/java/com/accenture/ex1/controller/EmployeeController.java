@@ -26,10 +26,14 @@ public class EmployeeController {
     }
 
     //Read all employees
+    @GetMapping("/employees")
+    public EmployeeWrapper getEmployees() {
+        return new EmployeeWrapper(employeeRepository.findAll());
+    }
 
     //Read employee
     @GetMapping("/employee/{id}")
-    public ResponseEntity<Employee> getEmployees(@PathVariable(value = "id") String id) {
+    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "id") String id) {
         return ResponseEntity.ok(new Employee(id));
     }
 
