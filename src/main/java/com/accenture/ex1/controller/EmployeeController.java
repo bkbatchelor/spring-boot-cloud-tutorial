@@ -33,8 +33,8 @@ public class EmployeeController {
 
     //Read employee
     @GetMapping("/employee/{id}")
-    public ResponseEntity<Employee> getEmployee(@PathVariable(value = "id") String id) {
-        return ResponseEntity.ok(new Employee(id));
+    public EmployeeWrapper getEmployee(@PathVariable(value = "id") String id) {
+        return new EmployeeWrapper(employeeRepository.findById(id).get());
     }
 
     //Update employee
