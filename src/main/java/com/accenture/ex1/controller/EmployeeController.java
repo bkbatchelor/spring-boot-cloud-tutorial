@@ -2,6 +2,7 @@ package com.accenture.ex1.controller;
 
 
 import com.accenture.ex1.model.Employee;
+import com.accenture.ex1.model.EmployeeWrapper;
 import com.accenture.ex1.service.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,9 +21,11 @@ public class EmployeeController {
 
     //Create employee
     @PostMapping("/employee")
-    public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee) {
-        return new ResponseEntity<>(employeeRepository.save(employee), HttpStatus.ACCEPTED);
+    public EmployeeWrapper createEmployee(@Valid @RequestBody Employee employee) {
+        return new EmployeeWrapper(employeeRepository.save(employee));
     }
+
+    //Read all employees
 
     //Read employee
     @GetMapping("/employee/{id}")
@@ -32,7 +35,7 @@ public class EmployeeController {
 
     //Update employee
     @PutMapping("/employee/{id}")
-    public ResponseEntity<Employee> updateRecord(@PathVariable(value = "id") String id){
+    public ResponseEntity<Employee> updateRecord(@PathVariable(value = "id") String id) {
         return new ResponseEntity<>(new Employee(id), HttpStatus.ACCEPTED);
     }
 
