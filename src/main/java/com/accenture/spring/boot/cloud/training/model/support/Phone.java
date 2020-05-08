@@ -1,4 +1,4 @@
-package com.accenture.ex1.model.support;
+package com.accenture.spring.boot.cloud.training.model.support;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

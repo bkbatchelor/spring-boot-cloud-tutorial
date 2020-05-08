@@ -1,10 +1,10 @@
-package com.accenture.ex1;
+package com.accenture.spring.boot.cloud.training;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Exercise1ApplicationTests {
+class ApplicationTests {
 
     @Test
     void contextLoads() {

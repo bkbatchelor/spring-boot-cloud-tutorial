@@ -1,9 +1,9 @@
-package com.accenture.ex1.controller;
+package com.accenture.spring.boot.cloud.training.controller;
 
 
-import com.accenture.ex1.model.Employee;
-import com.accenture.ex1.model.EmployeeWrapper;
-import com.accenture.ex1.repository.EmployeeRepository;
+import com.accenture.spring.boot.cloud.training.model.Employee;
+import com.accenture.spring.boot.cloud.training.model.EmployeeWrapper;
+import com.accenture.spring.boot.cloud.training.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

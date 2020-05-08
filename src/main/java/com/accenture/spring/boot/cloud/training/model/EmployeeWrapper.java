@@ -1,4 +1,4 @@
-package com.accenture.ex1.model;
+package com.accenture.spring.boot.cloud.training.model;
 
 
 import lombok.Getter;
