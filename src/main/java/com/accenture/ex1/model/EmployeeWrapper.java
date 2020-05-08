@@ -12,7 +12,7 @@ public class EmployeeWrapper {
 
     private List<Employee> employeeList;
 
-    private Map<String, List<String>> employeeHash;
+    private Map<String, List<String>> empIdHash;
 
     public EmployeeWrapper(Employee employee) {
         employeeList = Collections.singletonList(employee);
@@ -23,6 +23,6 @@ public class EmployeeWrapper {
     }
 
     public EmployeeWrapper(Map<String, List<String>> listMap) {
-        this.employeeHash = listMap;
+        this.empIdHash = listMap;
     }
 }
