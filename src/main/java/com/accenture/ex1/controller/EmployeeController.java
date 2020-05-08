@@ -5,8 +5,6 @@ import com.accenture.ex1.model.Employee;
 import com.accenture.ex1.model.EmployeeWrapper;
 import com.accenture.ex1.service.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -38,9 +36,9 @@ public class EmployeeController {
     }
 
     //Update employee
-    @PutMapping("/employee/{id}")
-    public ResponseEntity<Employee> updateRecord(@PathVariable(value = "id") String id) {
-        return new ResponseEntity<>(new Employee(id), HttpStatus.ACCEPTED);
+    @PutMapping("/employee/")
+    public EmployeeWrapper updateRecord(@Valid @RequestBody Employee employee) {
+        return new EmployeeWrapper((employeeRepository.save(employee)));
     }
 
     //Delete employee
