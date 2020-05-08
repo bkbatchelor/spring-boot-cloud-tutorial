@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Spring Boot Cloud Training App
+  profiles:
+    active: dev
+
+---
+
+spring:
+  profiles: dev
+  data:
+    mongodb:
+
+      username: ${MONGODB_USER_NAME}
+      password: ${MONGODB_PASSWORD}
+      database: spring-boot-training
+      uri: mongodb+srv://${MONGODB_USER_NAME}:${MONGODB_PASSWORD}@cluster0-ww0df.mongodb.net/spring-boot-training?retryWrites=true&w=majority
+      repositories:
+        type: auto

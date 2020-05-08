@@ -2,6 +2,8 @@ package com.accenture.ex1.controller;
 
 
 import com.accenture.ex1.model.Employee;
+import com.accenture.ex1.service.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +15,18 @@ import java.util.Map;
 @RestController
 public class EmployeeController {
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
     //Create employee
     @PostMapping("/employee")
-    public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee){
-        return new ResponseEntity<>(employee, HttpStatus.ACCEPTED);
+    public ResponseEntity<Employee> createEmployee(@Valid @RequestBody Employee employee) {
+        return new ResponseEntity<>(employeeRepository.save(employee), HttpStatus.ACCEPTED);
     }
 
     //Read employee
     @GetMapping("/employee/{id}")
-    public ResponseEntity<Employee> getEmployees(@PathVariable(value = "id") String id){
+    public ResponseEntity<Employee> getEmployees(@PathVariable(value = "id") String id) {
         return ResponseEntity.ok(new Employee(id));
     }
 
