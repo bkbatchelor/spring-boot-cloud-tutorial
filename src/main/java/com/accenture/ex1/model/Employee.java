@@ -1,5 +1,8 @@
 package com.accenture.ex1.model;
 
+import com.accenture.ex1.model.support.Address;
+import com.accenture.ex1.model.support.Contact;
+import com.accenture.ex1.model.support.Phone;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;

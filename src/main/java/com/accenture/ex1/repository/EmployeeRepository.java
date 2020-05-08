@@ -1,4 +1,4 @@
-package com.accenture.ex1.service;
+package com.accenture.ex1.repository;
 
 import com.accenture.ex1.model.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;

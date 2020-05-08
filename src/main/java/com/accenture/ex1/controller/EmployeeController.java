@@ -3,7 +3,7 @@ package com.accenture.ex1.controller;
 
 import com.accenture.ex1.model.Employee;
 import com.accenture.ex1.model.EmployeeWrapper;
-import com.accenture.ex1.service.EmployeeRepository;
+import com.accenture.ex1.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
