@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -38,14 +40,16 @@ public class EmployeeController {
     //Update employee
     @PutMapping("/employee/")
     public EmployeeWrapper updateRecord(@Valid @RequestBody Employee employee) {
-        return new EmployeeWrapper((employeeRepository.save(employee)));
+        return new EmployeeWrapper(employeeRepository.save(employee));
     }
 
     //Delete employee
     @DeleteMapping("/employee/{id}")
-    public Map<String,String> deleteEmployee(@PathVariable(value = "id") String id) {
-        Map<String, String> map = new HashMap<>();
-        map.put("delete", "successful");
-        return map;
+    public EmployeeWrapper deleteEmployee(@PathVariable(value = "id") String id) {
+        employeeRepository.deleteById(id);
+
+        Map<String, List<String>> status = new HashMap<>();
+        status.put("deleted", Collections.singletonList(id));
+        return new EmployeeWrapper(status);
     }
 }
