@@ -15,9 +15,12 @@ import java.util.Map;
 
 @RestController
 public class EmployeeController {
+    private EmployeeRepository employeeRepository;
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    public EmployeeController(EmployeeRepository employeeRepository){
+        this.employeeRepository = employeeRepository;
+    }
 
     //Create employee
     @PostMapping("/employee")
