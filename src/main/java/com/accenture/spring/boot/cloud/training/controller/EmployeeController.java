@@ -5,6 +5,7 @@ import com.accenture.spring.boot.cloud.training.model.Employee;
 import com.accenture.spring.boot.cloud.training.model.EmployeeWrapper;
 import com.accenture.spring.boot.cloud.training.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -22,34 +23,46 @@ public class EmployeeController {
     //Create employee
     @PostMapping("/employee")
     public EmployeeWrapper createEmployee(@Valid @RequestBody Employee employee) {
-        return new EmployeeWrapper(employeeRepository.save(employee));
+        Map<String, List<Employee>> responseListMap = new HashMap<>();
+        responseListMap.put("created", Collections.singletonList(employeeRepository.save(employee)));
+
+        return new EmployeeWrapper(responseListMap);
     }
 
     //Read all employees
     @GetMapping("/employees")
     public EmployeeWrapper getEmployees() {
-        return new EmployeeWrapper(employeeRepository.findAll());
+        Map<String, List<Employee>> responseListMap = new HashMap<>();
+        responseListMap.put("query", employeeRepository.findAll());
+
+        return new EmployeeWrapper(responseListMap);
     }
 
     //Read employee
     @GetMapping("/employee/{id}")
     public EmployeeWrapper getEmployee(@PathVariable(value = "id") String id) {
-        return new EmployeeWrapper(employeeRepository.findById(id).get());
+        Map<String, List<Employee>> responseListMap = new HashMap<>();
+        responseListMap.put("query", Collections.singletonList(employeeRepository.findById(id).get()));
+
+        return new EmployeeWrapper(responseListMap);
     }
 
     //Update employee
-    @PutMapping("/employee/")
+    @PutMapping("/employee")
     public EmployeeWrapper updateRecord(@Valid @RequestBody Employee employee) {
-        return new EmployeeWrapper(employeeRepository.save(employee));
+        Map<String, List<Employee>> responseListMap = new HashMap<>();
+        responseListMap.put("updated", Collections.singletonList(employeeRepository.save(employee)));
+
+        return new EmployeeWrapper(responseListMap);
     }
 
     //Delete employee
     @DeleteMapping("/employee/{id}")
-    public EmployeeWrapper deleteEmployee(@PathVariable(value = "id") String id) {
+    public HttpStatus deleteEmployee(@PathVariable(value = "id") String id) {
         employeeRepository.deleteById(id);
 
-        Map<String, List<String>> status = new HashMap<>();
-        status.put("deleted", Collections.singletonList(id));
-        return new EmployeeWrapper(status);
+        Map<String, List<Employee>> listMap = new HashMap<>();
+
+        return HttpStatus.OK;
     }
 }
