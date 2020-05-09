@@ -49,7 +49,6 @@ public class EmployeeController {
         return new EmployeeModel.Wrapper(responseListMap);
     }
 
-
     //Update employee
     @PutMapping("/employee")
     public EmployeeModel.Wrapper updateRecord(@Valid @RequestBody EmployeeModel employee) {
