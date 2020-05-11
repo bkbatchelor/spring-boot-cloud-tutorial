@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.accenture</groupId>
-    <artifactId>employee-microservice</artifactId>
+    <artifactId>employee-roster-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Employee Microservices</name>
     <description>Spring Boot Cloud Training Exercise</description>

@@ -15,7 +15,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "employee")
-public class EmployeeModel {
+public class Employee {
 
     @Id
     @JsonProperty("_id")
@@ -33,16 +33,16 @@ public class EmployeeModel {
     @JsonProperty("phone")
     private Phone phone;
 
-    public EmployeeModel(String id) {
+    public Employee(String id) {
         this.id = id;
     }
 
     @Getter
     public static class Wrapper {
 
-        private Map<String, List<EmployeeModel>> responseList;
+        private Map<String, List<Employee>> responseList;
 
-        public Wrapper(Map<String, List<EmployeeModel>> listMap) {
+        public Wrapper(Map<String, List<Employee>> listMap) {
             this.responseList = listMap;
         }
     }
