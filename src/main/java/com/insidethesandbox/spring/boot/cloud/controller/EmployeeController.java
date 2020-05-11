@@ -9,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,10 +47,7 @@ public class EmployeeController {
     //Update employee
     @PutMapping("/employee")
     public Employee.Wrapper updateRecord(@Valid @RequestBody Employee employee) {
-        Map<String, List<Employee>> responseListMap = new HashMap<>();
-        responseListMap.put("updated", Collections.singletonList(employeeRepository.save(employee)));
-
-        return new Employee.Wrapper(responseListMap);
+        return employeeService.updateEmployeeByObject(employee);
     }
 
     //Delete employee
