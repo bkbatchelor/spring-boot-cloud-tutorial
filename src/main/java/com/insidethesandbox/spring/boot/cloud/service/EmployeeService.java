@@ -41,7 +41,13 @@ public class EmployeeService {
 
     // Update employee by ID
 
+
     // Update employee by object
+    public Employee.Wrapper updateEmployeeById(Employee employee) {
+        return new Employee.Wrapper(Collections.singletonMap(
+                "created", Collections.singletonList(employeeRepository.save(employee))
+        ));
+    }
 
     // Delete employee by ID
 
