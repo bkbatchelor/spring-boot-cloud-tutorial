@@ -14,10 +14,18 @@
     <groupId>org.insidethesandbox.io</groupId>
     <artifactId>spring-boot-cloud-training</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>${artifactId}</name>
+    <description>Spring Boot Cloud Training Exercise</description>
 
     <packaging>pom</packaging>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.test.skip>true</maven.test.skip>
+    </properties>
+
     <modules>
         <module>employee-roster-service</module>
+        <module>client-app</module>
     </modules>
 </project>
