@@ -36,10 +36,7 @@ public class EmployeeController {
     //Read all employees
     @GetMapping("/employees")
     public Employee.Wrapper getEmployees() {
-        Map<String, List<Employee>> responseListMap = new HashMap<>();
-        responseListMap.put("query", employeeRepository.findAll());
-
-        return new Employee.Wrapper(responseListMap);
+        return employeeService.getAllEmployees();
     }
 
     //Read employee

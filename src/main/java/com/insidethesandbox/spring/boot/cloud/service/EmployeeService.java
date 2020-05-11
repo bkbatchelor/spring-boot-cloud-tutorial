@@ -31,10 +31,13 @@ public class EmployeeService {
     // Query employee by ID
     public Employee.Wrapper getEmployeeById(String id) {
         return new Employee.Wrapper(Collections.singletonMap(
-                "qyuery", Collections.singletonList(employeeRepository.findById(id).get())));
+                "query", Collections.singletonList(employeeRepository.findById(id).get())));
     }
 
     // Query employee by object
+    public Employee.Wrapper getAllEmployees() {
+        return new Employee.Wrapper(Collections.singletonMap("query", employeeRepository.findAll()));
+    }
 
     // Query all employees
 
