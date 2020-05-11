@@ -45,10 +45,7 @@ public class EmployeeController {
     //Read employee
     @GetMapping("/employee/{id}")
     public Employee.Wrapper getEmployee(@PathVariable(value = "id") String id) {
-        Map<String, List<Employee>> responseListMap = new HashMap<>();
-        responseListMap.put("query", Collections.singletonList(employeeRepository.findById(id).get()));
-
-        return new Employee.Wrapper(responseListMap);
+        return employeeService.getEmployeeById(id);
     }
 
     //Update employee

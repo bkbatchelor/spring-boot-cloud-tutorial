@@ -27,7 +27,12 @@ public class EmployeeService {
                 "created", Collections.singletonList(employeeRepository.save(employee))
         ));
     }
+
     // Query employee by ID
+    public Employee.Wrapper getEmployeeById(String id) {
+        return new Employee.Wrapper(Collections.singletonMap(
+                "qyuery", Collections.singletonList(employeeRepository.findById(id).get())));
+    }
 
     // Query employee by object
 
