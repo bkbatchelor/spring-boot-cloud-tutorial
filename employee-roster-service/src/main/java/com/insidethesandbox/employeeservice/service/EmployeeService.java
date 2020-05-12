@@ -1,7 +1,7 @@
-package com.insidethesandbox.spring.boot.cloud.service;
+package com.insidethesandbox.employeeservice.service;
 
-import com.insidethesandbox.spring.boot.cloud.model.employee.Employee;
-import com.insidethesandbox.spring.boot.cloud.repository.EmployeeRepository;
+import com.insidethesandbox.employeeservice.model.employee.Employee;
+import com.insidethesandbox.employeeservice.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
-package com.insidethesandbox.spring.boot.cloud.controller;
+package com.insidethesandbox.employeeservice.controller;
 
 
-import com.insidethesandbox.spring.boot.cloud.model.employee.Employee;
-import com.insidethesandbox.spring.boot.cloud.repository.EmployeeRepository;
-import com.insidethesandbox.spring.boot.cloud.service.EmployeeService;
+import com.insidethesandbox.employeeservice.model.employee.Employee;
+import com.insidethesandbox.employeeservice.repository.EmployeeRepository;
+import com.insidethesandbox.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

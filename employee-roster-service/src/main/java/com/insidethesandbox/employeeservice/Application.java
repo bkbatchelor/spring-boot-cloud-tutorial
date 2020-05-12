@@ -1,4 +1,4 @@
-package com.insidethesandbox.spring.boot.cloud;
+package com.insidethesandbox.employeeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
