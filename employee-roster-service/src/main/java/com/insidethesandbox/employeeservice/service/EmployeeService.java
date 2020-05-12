@@ -28,7 +28,7 @@ public class EmployeeService {
     // Query employee by ID
     public Employee.Wrapper getEmployeeById(String id) {
         return new Employee.Wrapper(Collections.singletonMap(
-                "query", Collections.singletonList(employeeRepository.findById(id).get())));
+                "query", Collections.singletonList(employeeRepository.findById(id).orElse(null))));
     }
 
     // Query employee by object
@@ -50,6 +50,14 @@ public class EmployeeService {
     }
 
     // Delete employee by ID
+    public Employee.Wrapper deleteEmployeeById(final String id) {
+
+        Employee employee = employeeRepository.findById(id).orElse(null);
+
+        employeeRepository.deleteById(id);
+        return new Employee.Wrapper(Collections.singletonMap(
+                "deleted", Collections.singletonList(employee)));
+    }
 
     // Delete employee by object
 

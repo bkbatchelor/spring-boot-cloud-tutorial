@@ -5,13 +5,9 @@ import com.insidethesandbox.employeeservice.model.employee.Employee;
 import com.insidethesandbox.employeeservice.repository.EmployeeRepository;
 import com.insidethesandbox.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @RestController
 public class EmployeeController {
@@ -52,11 +48,7 @@ public class EmployeeController {
 
     //Delete employee
     @DeleteMapping("/employee/{id}")
-    public HttpStatus deleteEmployee(@PathVariable(value = "id") String id) {
-        employeeRepository.deleteById(id);
-
-        Map<String, List<Employee>> listMap = new HashMap<>();
-
-        return HttpStatus.OK;
+    public Employee.Wrapper deleteEmployee(@PathVariable(value = "id") String id) {
+        return employeeService.deleteEmployeeById(id);
     }
 }
