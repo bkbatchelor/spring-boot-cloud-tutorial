@@ -4,4 +4,4 @@ server:
 
 spring:
   application:
-    name: Client Application
+    name: client-app

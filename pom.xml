@@ -4,12 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>org.insidethesandbox.io</groupId>
     <artifactId>spring-boot-cloud-training</artifactId>
@@ -18,11 +12,6 @@
     <description>Spring Boot Cloud Training Exercise</description>
 
     <packaging>pom</packaging>
-
-    <properties>
-        <java.version>1.8</java.version>
-        <maven.test.skip>true</maven.test.skip>
-    </properties>
 
     <modules>
         <module>config-server</module>
