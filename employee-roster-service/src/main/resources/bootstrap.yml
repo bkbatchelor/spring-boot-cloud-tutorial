@@ -1,6 +1,8 @@
 spring:
   application:
     name: config-employee-roster-service
+  profiles:
+    active: dev
   cloud:
     config:
       discovery:
