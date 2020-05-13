@@ -49,4 +49,8 @@ public class ClientController {
     }
 
     // Delete employee by id
+    @DeleteMapping("/employee/{id}")
+    public void deleteEmployee(@PathVariable(value = "id") String id) {
+        restTemplate.delete("http://localhost:8081/employee-service/employee/" + id);
+    }
 }
