@@ -2,7 +2,6 @@ package com.insidethesandbox.employeeservice.controller;
 
 
 import com.insidethesandbox.employeeservice.model.employee.Employee;
-import com.insidethesandbox.employeeservice.repository.EmployeeRepository;
 import com.insidethesandbox.employeeservice.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,14 +11,11 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/employee-service")
 public class EmployeeController {
-    private EmployeeRepository employeeRepository;
 
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     @Autowired
-    public EmployeeController(EmployeeRepository employeeRepository,
-                              EmployeeService employeeService){
-        this.employeeRepository = employeeRepository;
+    public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 

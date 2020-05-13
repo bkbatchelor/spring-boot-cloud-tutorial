@@ -25,6 +25,7 @@
     </properties>
 
     <modules>
+        <module>config-server</module>
         <module>employee-roster-service</module>
         <module>client-app</module>
     </modules>

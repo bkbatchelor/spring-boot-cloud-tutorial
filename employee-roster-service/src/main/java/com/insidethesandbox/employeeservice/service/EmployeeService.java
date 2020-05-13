@@ -10,7 +10,7 @@ import java.util.Collections;
 @Service
 public class EmployeeService {
 
-    private EmployeeRepository employeeRepository;
+    private final EmployeeRepository employeeRepository;
 
     @Autowired
     public EmployeeService(EmployeeRepository employeeRepository){
@@ -31,16 +31,10 @@ public class EmployeeService {
                 "query", Collections.singletonList(employeeRepository.findById(id).orElse(null))));
     }
 
-    // Query employee by object
-
-
     // Query all employees
     public Employee.Wrapper getAllEmployees() {
         return new Employee.Wrapper(Collections.singletonMap("query", employeeRepository.findAll()));
     }
-
-    // Update employee by ID
-
 
     // Update employee by object
     public Employee.Wrapper updateEmployeeByObject(Employee employee) {
@@ -58,8 +52,4 @@ public class EmployeeService {
         return new Employee.Wrapper(Collections.singletonMap(
                 "deleted", Collections.singletonList(employee)));
     }
-
-    // Delete employee by object
-
-    // Delete all employees
 }
