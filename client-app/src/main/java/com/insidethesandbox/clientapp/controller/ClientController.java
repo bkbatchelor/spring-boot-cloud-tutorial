@@ -40,7 +40,13 @@ public class ClientController {
         return restTemplate.getForObject("http://localhost:8081/employee-service/employee/" + id, Employee.Wrapper.class);
     }
 
-    //Update employee by id
+    //Update employee
+    @PutMapping("/employee")
+    public Employee.Wrapper updateRecord(@Valid @RequestBody Employee employee) {
+        HttpEntity<Employee> request = new HttpEntity<>(employee);
+        return restTemplate.exchange("http://localhost:8081/employee-service/employee", HttpMethod.POST, request, Employee.Wrapper.class).getBody();
+
+    }
 
     // Delete employee by id
 }
