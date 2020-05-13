@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: Spring Boot Cloud Training App
+    name: Employee Roster Service
   profiles:
     active: dev
 
