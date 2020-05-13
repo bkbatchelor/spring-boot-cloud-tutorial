@@ -13,7 +13,7 @@
     <groupId>com.insidethesandbox</groupId>
     <artifactId>client-app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>${artifactId}</name>
+    <name>${project.artifactId}</name>
     <description>microservice client application</description>
 
     <properties>

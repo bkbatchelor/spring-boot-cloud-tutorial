@@ -12,7 +12,7 @@
     <groupId>com.accenture</groupId>
     <artifactId>employee-roster-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>${artifactId}</name>
+    <name>${project.artifactId}</name>
     <description>Spring Boot Cloud Training Exercise</description>
 
     <properties>
