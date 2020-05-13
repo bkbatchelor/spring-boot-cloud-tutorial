@@ -1,7 +1,13 @@
 server:
   port: 8082
 
-
 spring:
   application:
     name: client-app
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+
+
