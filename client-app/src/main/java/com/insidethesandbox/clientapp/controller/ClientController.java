@@ -35,6 +35,10 @@ public class ClientController {
     }
 
     //get employee by id
+    @GetMapping("/employee/{id}")
+    public Employee.Wrapper getEmployee(@PathVariable(value = "id") String id) {
+        return restTemplate.getForObject("http://localhost:8081/employee-service/employee/" + id, Employee.Wrapper.class);
+    }
 
     //Update employee by id
 
